@@ -1,0 +1,83 @@
+
+<html>
+<title>FAQ App</title>
+<h1> FAQ APP</h1>
+<button class="FAQ">what are the basic qualities of a programeer?</button>
+
+<div class="ANSWER" >
+  <p>code..practice...code..practice..</p>
+</div>
+
+<button class="FAQ">is  coding hard?</button>
+<div class="ANSWER">
+  <p>depends on your intrest!</p>
+</div>
+
+<button class="FAQ">which are the best sites for practice?</button>
+<div class="ANSWER">
+  <p>w3 schools,leet code,hacker rank..</p>
+</div>
+<style>
+    h1 {text-align: center;
+    color:black}
+    .FAQ {
+        align-self: center;
+        height: 80px;
+        border-radius: 10px;
+        
+        width: 100%;
+
+        color:antiquewhite;
+        font-size:40px ;
+        background-color: yellowgreen;
+         text-align: center;
+         cursor:pointer;
+         font-family: Arial, Helvetica, sans-serif;
+         
+
+    }
+    .active, .FAQ:hover {
+  background-color: gray;
+}
+.FAQ:after {
+  content: '\002B';
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+.ANSWER {
+    width: 100%;
+  padding: 0 18px;
+  background-color:bisque;
+  max-height: 5;
+  overflow: hidden;
+  text-align: center;
+  border-radius: 10px;
+  font-size: 20px;
+  
+}
+</style>
+<script>
+    var acc = document.getElementsByClassName("FAQ");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
+
+
+</script>
+</html>

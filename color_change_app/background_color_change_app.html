@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title> Background Color Change App</title>
+   <style>
+      button {
+         font-size: 1.2rem;
+         margin: 20px;
+         border: 2px solid;
+         color: black;
+      }
+   </style>
+</head>
+<body>
+   <h2>Background Color Change App</h2>
+   <!--The <input type="color"> defines a color picker.-->
+   <input id = "colorInput" type = "color">
+   <button onclick = "pickingcolor()">  click to Change the color </button>
+   <script>
+      function pickingcolor() {
+         let color = document.getElementById('colorInput');
+         // changing the background color
+         document.body.style.backgroundColor = color.value;
+      }
+   </script>
+</body>
+</html>

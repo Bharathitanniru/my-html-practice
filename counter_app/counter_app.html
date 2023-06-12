@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html>
+  
+<head>
+    <title>Counter App</title>
+    <style>
+      *{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+.container{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+}
+.container h1{
+    margin: 30px;
+}
+.counter{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+}
+#increment-btn, #decrement-btn,  #reset {
+    height: 50px;
+    width: 120px;
+    padding: 0 40px;
+    border-radius: 10px;
+    font-size: 40px;
+    background-color: teal;
+    border: 2px solid black;
+    color: white;
+    margin: 20px;
+}
+#reset{
+    font-size: 20px;
+    
+    background-color: red;
+}
+#counter-value{
+    height: 50px;
+    min-width: 120px;
+    border-radius: 10px;
+    background-color: rgba(255, 0, 0, 0.187);
+    margin-top: 20px;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+
+
+    </style>
+    
+</head>
+  
+<body>
+    <div class="container">
+        <h1>Counter App</h1>
+        
+            <button id="increment-btn">+</button>
+            <div id="counter-value">0</div>
+            <button id="decrement-btn">-</button>
+        
+        <button id="reset">Reset</button>
+    </div>
+  
+<script>
+
+let counter = 0;
+const cntr_val = document.getElementById('counter-value');
+const incr = document.getElementById('increment-btn');
+
+incr.addEventListener('click', () => {
+    counter++;
+    cntr_val.innerHTML = counter;
+});
+
+const dcr = document.getElementById("decrement-btn");
+dcr.addEventListener('click' , () => { 
+    counter--;
+    cntr_val.innerHTML = counter;
+});
+ resetBtn=document.getElementById("reset")
+resetBtn.addEventListener('click',() => {
+    counter = 0;
+    cntr_val.innerHTML = counter;
+});
+
+  
+
+
+</script>
+</body>
+
+  
+</html>

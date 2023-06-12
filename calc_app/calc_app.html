@@ -1,0 +1,67 @@
+<doctype html>
+<html>
+  <head>
+  <title> Calculator App</title>
+  <style>
+    form {
+      text-align: center;
+    }
+    
+    #add-btn {
+      background-color: red;
+    }
+  
+    #sub-btn {
+      background-color: green;
+    }
+    
+    #mul-btn{
+      background-color: yellow;
+    }
+  
+    #div-btn{
+      background-color: blue;
+    }
+
+  </style>
+  </head>
+  
+
+  <body>
+    <h1 style="text-align: center;">  CALCULATOR APP </h1>
+    <form>
+      <label for="fnum">First number:</label>
+      <input type=number id="fnum"><br><br>
+      
+      <label for="snum">second number:</label>
+      <input type=number id="snum"><br><br>
+      
+      <label for="resnum">Result:</label>
+      <input type=number id="Resname"><br><br>
+      
+      <button type="button" id= 'add-btn'>add</button>
+      <button type="button" id= 'sub-btn' onclick="fun_sub()">sub</button>
+      <button type="button" id= 'mul-btn' onclick="document.getElementById('Resname').value = document.getElementById('fnum').value * document.getElementById('snum').value">mul</button>
+      <button type="button" id= 'div-btn' onclick="func_div()">div</button>
+    </form>
+      
+    <script src="./calc_div.js"> </script>
+    <script>    
+        const add_obj = document.getElementById('add-btn');
+        const res_obj = document.getElementById('Resname');
+        
+        add_obj.addEventListener('click', () => {
+                a = parseInt(document.getElementById('fnum').value);
+            b = parseInt(document.getElementById('snum').value);
+            var res1 = a + b;
+            res_obj.value = res1;
+        });  
+        
+        function fun_sub() {    	
+            a = parseInt(document.getElementById('fnum').value);
+            b = parseInt(document.getElementById('snum').value);
+            res_obj.value = a -b;
+        };    
+    </script>    
+  </body>
+</html>
