@@ -6,6 +6,7 @@ button
 img{
   height:50%;
   width:50%;
+  align-self: center;
 
 };
 

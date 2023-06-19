@@ -1,14 +1,57 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Project - 79</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="main.js"></script>
+    <title>HOTEL MENU APP</title>
+    <script>
+    menu_list_items = ['chicken hariyali','chicken soup','veg biryani','chicken biryani','dum aloo','gulabjamun','icecream','sweet pan']
+function run()
+{
+    document.getElementById("menu_list_items").innerHTML = menu_list_items;
+}
+
+function add_new_menu_item()
+{
+    new_menu_item = document.getElementById("new_menu_item").value;
+    menu_list_items.push(new_menu_item);
+    menu_list_items.sort();
+    document.getElementById("menu_list_items").innerHTML = menu_list_items;
+};
+</script>
+<Style>
+    
+
+
+button
+{
+	margin-top: 20px; 
+	margin-bottom: 20px; 
+}
+img{
+  height:50%;
+  width:100%;
+  align-self: center;
+
+};
+
+
+#menu_list_items
+{
+	font-weight: 1000;
+	font-size: 25px;
+}
+
+
+
+</Style>
+
+
+</head>
+    
 </head>
 <body>
     <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ"
-
-
+</body>
+</html>
 <center>
 <h3 style="margin-top: 20px; margin-bottom: 20px; color: green;">
 Menu List Of the cafe
@@ -18,7 +61,7 @@ Menu List Of the cafe
 	
 </div>
 
-<button onclick="run();">Menu List</button> 
+<button onclick="run();">Menu List</button>
 
 <div>
 	<span>Add New Menu Item - </span>
@@ -28,6 +71,9 @@ Menu List Of the cafe
 <button onclick="add_new_menu_item();">Add New Menu Item</button>
 
 </center>
+
+
+  
 
 
 </body>
