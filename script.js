@@ -1,4 +1,4 @@
-// begining data
+// begining data with wanted fields
 const transactions = [
     { date: '2023-09-20', description: 'Initial Balance', debit: 0, credit: 1000 },
 ];
@@ -11,8 +11,10 @@ function displayTransactions() {
     transactions.forEach(transaction => {
         currentBalance -= transaction.debit;
         currentBalance += transaction.credit;
-
-        const row = document.createElement('tr');
+        
+        
+        //adding row
+       const row = document.createElement('tr');
         row.innerHTML = `
             <td>${transaction.date}</td>
             <td>${transaction.description}</td>
@@ -25,9 +27,9 @@ function displayTransactions() {
     });
 }
 
-// adding functionality to buttons
+// transaction
 function performTransaction(amount, description) {
-    //const transactionTable = document.getElementById('transactionTable');
+
     const accountBalanceElement = document.getElementById('accountBalance');
     const currentBalance = parseFloat(accountBalanceElement.textContent);
 
@@ -41,7 +43,7 @@ function performTransaction(amount, description) {
 
     // Create a new transaction
     const transaction = {
-        date: new Date().toISOString(),
+        date: new Date().toISOString().slice(0, 10),
         description: description,
         debit: amount < 0 ? Math.abs(amount) : 0,
         credit: amount > 0 ? amount : 0,
