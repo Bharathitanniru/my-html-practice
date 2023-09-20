@@ -1,9 +1,9 @@
-// Sample transaction data
+// begining data
 const transactions = [
     { date: '2023-09-20', description: 'Initial Balance', debit: 0, credit: 1000 },
 ];
 
-// Function to display transactions in the table
+//creating table data
 function displayTransactions() {
     const transactionTable = document.getElementById('transactionTable');
     let currentBalance = 0; // Starting balance
@@ -25,7 +25,7 @@ function displayTransactions() {
     });
 }
 
-// Function to handle debit and credit transactions
+// adding functionality to buttons
 function performTransaction(amount, description) {
     //const transactionTable = document.getElementById('transactionTable');
     const accountBalanceElement = document.getElementById('accountBalance');
@@ -41,7 +41,7 @@ function performTransaction(amount, description) {
 
     // Create a new transaction
     const transaction = {
-        date: new Date().toISOString().slice(0, 10),
+        date: new Date().toISOString(),
         description: description,
         debit: amount < 0 ? Math.abs(amount) : 0,
         credit: amount > 0 ? amount : 0,
@@ -49,12 +49,12 @@ function performTransaction(amount, description) {
 
     transactions.push(transaction);
 
-    // Update the UI
+    // showing balance
     displayTransactions();
     accountBalanceElement.textContent = (currentBalance + amount).toFixed(2);
 }
 
-// Event listeners for debit and credit buttons
+// adding functionality to buttons
 document.getElementById('debitButton').addEventListener('click', () => {
     const amount = parseFloat(prompt('Enter debit amount:'));
     if (!isNaN(amount)) {
@@ -69,5 +69,4 @@ document.getElementById('creditButton').addEventListener('click', () => {
     }
 });
 
-// Initial display
-//displayTransactions();
+
