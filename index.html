@@ -1,27 +1,37 @@
-<html>
-    <head>
-        <title>
-            HTML Assignment
-        </title>
-        <style>
-            #zero, #one, #two, #three, #four {
-                height: 100px;
-                width: 100px;
-                background-color: bisque;
-                text-align: center;
-                padding: 50px 50px;
-                border:  2px solid red;
-                text-align: center;
-                font-size:  30px;
-                display: inline-block;
-            };
-            </style>
-    <div class = "container">
-        <div id="zero"><a href="./color_change_app/background_color_change_app.html"target="_blank"> Color App</a></div>
-        <div id="one"><a href="./calc_app/calc_app.html"target="_blank"> calculator App</a></div>
-        <div id="two"><a href="./counter_app/counter_app.html"target="_blank"> counter App</a></div>
-        <div id="three"><a href="./faq_app/faq_app.html"target="_blank"> Faq App</a></div>
-        <div id="four"><a href="./hotel_menu_app/hotel_menu_app.html"target="_blank"> HotelMenu App</a></div>
-    </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Banking Page</title>
+</head>
+<body>
+    <header>
+        <h1>My Bank</h1>
+        <p>Account Balance: $<span id="accountBalance">1000</span></p>
+    </header>
+    <main>
+        <h2>Transaction History</h2>
+        <div>
+            <button id="debitButton">Debit</button>
+            <button id="creditButton">Credit</button>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Description</th>
+                    <th>Debit</th>
+                    <th>Credit</th>
+                    <th>Balance</th>
+                </tr>
+            </thead>
+            <tbody id="transactionTable">
+                <!-- Transaction rows will be added here dynamically -->
+            </tbody>
+        </table>
+    </main>
+    <script src="script.js"></script>
 </body>
 </html>
